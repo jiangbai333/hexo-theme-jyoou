@@ -1,0 +1,16 @@
+{
+  "name": "hexo-theme-jyoou",
+  "version": "1.0.0",
+  "description": "超轻量级的hexo主题",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "jyoou"
+  ],
+  "author": "jbc",
+  "license": "ISC"
+}
