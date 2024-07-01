@@ -1,0 +1,146 @@
+// Code
+@import "_highlight/rainbow"
+
+$color-background = #1d1f21
+$color-footer-mobile-1 = lighten($color-background, 2%)
+$color-footer-mobile-2 = lighten($color-background, 10%)
+$color-background-code = lighten($color-background, 2%)
+$color-border = #908d8d
+$color-scrollbar = #999
+$color-meta = #908d8d
+$color-meta-code = #908d8d
+$color-link = rgba(212, 128, 170, 1)
+$color-text = #c9cacc
+$color-accent-3 = #cccccc
+$color-accent-2 = #eeeeee
+$color-accent-1 = #2bbc8a
+$color-quote = #ccffb6
+
+pre
+  overflow-x: auto
+  padding: 10px 15px
+  padding-bottom: 0
+  border: 1px dotted $color-border
+  border-radius: 4px
+  font-size: 13px
+  font-family: $font-family-mono
+  line-height: 22px
+  -webkit-border-radius: 4px
+
+  code
+    display: block
+    padding: 0
+    border: none
+
+code
+  padding: 0 5px
+  border: 1px dotted $color-border
+  border-radius: 2px
+  -webkit-border-radius: 2px
+
+.highlight
+  overflow-x: auto
+  margin: 1rem 0
+  padding: 10px 15px
+  border-radius: 4px
+  background: $color-background-code
+  font-family: $font-family-mono
+  // color: $color-accent-3
+  -webkit-border-radius: 4px
+
+  figcaption
+    margin: -5px 0 5px
+    color: $color-meta-code
+    font-size: .9em
+    transform: scale(1)
+
+    a
+      float: right
+      color: $color-meta-code
+      font-style: italic
+      font-size: .8em
+
+      underline(10px, $color-link)
+
+    a:hover
+      color: lighten($color-meta-code, 20%)
+
+    &:before, content: ""
+      display: table
+
+    &:after
+      clear: both
+
+  &:hover 
+    .btn-copy
+      opacity: 1
+
+  .btn-copy
+    font-size: 1.2rem
+    position: absolute
+    right: 20px
+    opacity: 0
+    transition: opacity 0.2s ease-in
+    &:hover
+      color: $color-accent-1
+
+  pre
+    margin: 0
+    padding: 0
+    border: none
+    background: none
+
+  table
+    width: auto
+
+  td.gutter
+    text-align: right
+    opacity: .2
+
+  .line
+    height: 22px
+
+#header-post #actions
+  direction: ltr !important
+
+body
+    max-width: 48rem
+    margin: 0 auto 0 auto;
+    height: 100%;
+    font-family: 'Helvetica Neue';
+    #herder
+        #title
+            color: #000;
+            .p-name
+                margin-bottom: 0.5rem;
+    #nav ul
+        padding-inline-start: 0px;
+        margin-top: 0px;
+        li
+            display: inline-block;
+            border-right: 1px solid;
+            border-color: #acacac;
+            margin-right: 0.2rem;
+            a
+                margin-right: 0.2rem;
+        li:last-child
+                margin-right: 0;
+                border-right: 0;
+
+a
+    text-decoration: none;
+    background: none;
+
+span.date
+    margin-right: 1rem;
+
+.vpower
+    display: none;
+
+.year
+    font-weight: bold;
+
+.blog-posts
+    list-style: none;
+    margin-top: 0px;
+

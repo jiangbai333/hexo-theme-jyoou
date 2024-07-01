@@ -1,0 +1,27 @@
+<% var arr = {}, posts=site.posts.sort('date', 'desc' ); %>
+<% var lastDate; %>
+<% posts.forEach(post=> { %>
+<% if (lastDate != date(post.date, 'YYYY' )) { %>
+    <% if (lastDate) { %>
+        </ul>
+        </br>
+    <% } %>
+    <div class='year'>
+        <%= date(post.date, 'YYYY' ) %>
+    </div>
+    <ul class="blog-posts">
+<% }; lastDate = date(post.date, 'YYYY' ); %>
+    
+
+    <li>
+        <span class='date'><i>
+        <time>
+        <%= date(post.date, 'MM月DD日' ) %>
+        </time>
+        </i>
+        </span>
+        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+        </li>
+        <% }) %>
+</ul>
+
