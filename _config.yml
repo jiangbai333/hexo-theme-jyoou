@@ -1,0 +1,16 @@
+language: zh-CN
+
+enable:
+  subtitle: false
+
+valine:
+  enable: false # 是否开启 默认false不开启
+  appid:  # 你的appid
+  appkey: # 你的appkey
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
+  placeholder: 😈
+  visitor: true
+  avatar: monsterid # gravatar style
+  guest_info: nick,mail,link # custom comment header
+  pageSize: 10 # pagination size

@@ -1,0 +1,13 @@
+<ul class="blog-posts" style="padding-inline-start: 0px;">
+<% var arr = {}, posts=site.posts.sort('date', 'desc' ).slice(0, 10); %>
+<% var lastDate; %>
+<% posts.forEach(post=> { %>
+    <li>
+        <span class='date'><i><time><%= date(post.date, 'YYYY年MM月DD日') %></time></i></span>
+        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+        <!--<div>
+            <%- post.excerpt%>
+        </div>-->
+    </li>
+<% }) %>
+</ul>

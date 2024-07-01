@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>">
+    <head>
+        <%- partial('common/head') %>
+    </head>
+    <body>
+        <% if (is_home() || is_archive()) { %>
+            <%- partial('common/header') %>
+        <% } %>
+        <div class="wrapper">
+            <main>
+                <% if (is_home()) { %>
+                    <%- body %>
+                <% } %>
+                <% if (is_post()) { %>
+                    <%- partial('post') %>
+                <% } %>
+                <% if (is_archive()) { %>
+                    <%- partial('archive') %>
+                <% } %>
+            </main>
+        </div>
+        <%- partial('common/footer') %>
+    </body>
+</html>
