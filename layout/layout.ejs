@@ -18,8 +18,15 @@
                 <% if (is_archive()) { %>
                     <%- partial('archive') %>
                 <% } %>
+                <% if (is_category()) { %>
+                    <%- partial('category') %>
+                <% } %>
+                <% if (is_page()) { %>
+                    <%- partial('page') %>
+                <% } %>
             </main>
         </div>
         <%- partial('common/footer') %>
+        <%- partial('common/scripts') %>
     </body>
 </html>

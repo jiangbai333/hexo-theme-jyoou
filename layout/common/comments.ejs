@@ -10,18 +10,15 @@
         });
         new Valine({
             el: '#vcomments' ,
-            verify: <%= theme.valine.verify %>,
-            notify: <%= theme.valine.notify %>,
             appId: '<%= theme.valine.appid %>',
             appKey: '<%= theme.valine.appkey %>',
+            notify: <%= theme.valine.notify %>,
+            verify: <%= theme.valine.verify %>,
             placeholder: '<%= theme.valine.placeholder %>',
             avatar:'<%= theme.valine.avatar %>',
             guest_info:guest,
             pageSize:'<%= theme.valine.pageSize %>' || 10,
-            visitor: true,
-            recordIP: true,
             requiredFields: ['nick','mail'],
-            avatar: ''
         });
     </script>
 <% } %>

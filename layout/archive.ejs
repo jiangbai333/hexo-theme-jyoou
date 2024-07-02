@@ -9,11 +9,9 @@
     <div class='year'>
         <%= date(post.date, 'YYYY' ) %>
     </div>
-    <ul class="blog-posts">
+    <ul class="post-list">
 <% }; lastDate = date(post.date, 'YYYY' ); %>
-    
-
-    <li>
+        <li>
         <span class='date'><i>
         <time>
         <%= date(post.date, 'MM月DD日' ) %>
@@ -22,6 +20,6 @@
         </span>
         <a href="<%- url_for(post.path) %>"><%- post.title %></a>
         </li>
-        <% }) %>
+<% }) %>
 </ul>
 
