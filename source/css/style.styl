@@ -108,19 +108,22 @@ code
 @media screen and (max-width: 768px)
     body
         max-width: 90%
-        #toc
+        #sidebar
             display: none;
 
 @media screen and (min-width: 992px)
     body
         max-width: 56%
-        #toc
+        #sidebar
             width: 20%;
             position: fixed;
             top: 0;
             right: .5rem;
             font-size: small;
             font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
             ol
                 list-style-type: none;
                 padding-inline-start:20px;
@@ -161,6 +164,39 @@ body
     .post-list
         list-style-type: none;
         padding-inline-start: 0px;
+    #sidebar
+        height: 100%;
+        #toc
+            flex-grow: 1;
+            overflow-y: auto;
+            overflow-x: scroll;
+            transition: background ease-in .2s;
+            .toc-text
+                color: $color-text;
+                width: 17em;
+                display: inline-block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            .toc-text:hover
+                color: blue;
+        #toc:hover
+            background: #f2f2f2;
+        #actions
+            .action
+                cursor: pointer;
+            a
+                color: $color-text;
+                width: 20em;
+                display: inline-block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            a:hover
+                color: blue;
+            ul
+                list-style-type: none;
+                padding-inline-start: 20px;
 
 .vpower
     display: none;
