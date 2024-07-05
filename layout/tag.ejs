@@ -1,0 +1,35 @@
+<div id='tags-list'>
+<%- list_tags({show_count: false, style: 'link', class: 'tags-list',
+    transform(str) {
+        if(str == page.tag) {
+            return `<span class='focus-tag'>${str}</span>`
+        }
+        return str;
+    }
+}) %>
+<h3>标签为 <%- page.tag %> 的文章</h3>
+</div>
+<% var arr = {}, posts=site.posts.filter(v => {let t = v.tags.data; if (t.length > 0){let tags = t.flatMap(v => v.name); if(tags.includes(page.tag)){ return true; }}}).sort('date', 'desc' ); %>
+<% var lastDate; %>
+<% posts.forEach(post=> { %>
+<% if (lastDate != date(post.date, 'YYYY' )) { %>
+    <% if (lastDate) { %>
+        </ul>
+        </br>
+    <% } %>
+    <div class='year'>
+        <%= date(post.date, 'YYYY' ) %>
+    </div>
+    <ul class="post-list">
+<% }; lastDate = date(post.date, 'YYYY' ); %>
+        <li>
+        <span class='date'><i>
+        <time>
+        <%= date(post.date, 'MM月DD日' ) %>
+        </time>
+        </i>
+        </span>
+        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+        </li>
+<% }) %>
+</ul>

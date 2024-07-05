@@ -4,7 +4,7 @@
         <%- partial('common/head') %>
     </head>
     <body>
-        <% if (is_home() || is_archive()) { %>
+        <% if (is_home() || is_archive() || is_category() || is_tag()) { %>
             <%- partial('common/header') %>
         <% } %>
         <div class="wrapper">
@@ -20,6 +20,9 @@
                 <% } %>
                 <% if (is_category()) { %>
                     <%- partial('category') %>
+                <% } %>
+                <% if (is_tag()) { %>
+                    <%- partial('tag') %>
                 <% } %>
                 <% if (is_page()) { %>
                     <%- partial('page') %>

@@ -14,5 +14,7 @@
             --!><li><a href="/">关于</a></li>
         </ul>
     </div>
-    <%- partial('common/visitors') %>
+    <% if (!is_archive() && !is_category() && !is_tag()) { %>
+        <%- partial('common/visitors') %>
+    <% } %>
 </div>
