@@ -7,7 +7,7 @@
         return str;
     }
 }) %>
-<h3>标签为 <%- page.tag %> 的文章</h3>
+<h3>标签为 <span class='key-word'><%- page.tag %></span> 的文章</h3>
 </div>
 <% var arr = {}, posts=site.posts.filter(v => {let t = v.tags.data; if (t.length > 0){let tags = t.flatMap(v => v.name); if(tags.includes(page.tag)){ return true; }}}).sort('date', 'desc' ); %>
 <% var lastDate; %>

@@ -7,7 +7,7 @@
         return str;
     }
 }) %>
-<h3>分类为 <%- page.category %> 的文章</h3>
+<h3>分类为 <span class='key-word'><%- page.category %></span> 的文章</h3>
 </div>
 <% var arr = {}, posts=site.posts.filter(v => {let t = v.categories.data; if (t.length > 0){let categories = t.flatMap(v => v.name); if(categories.includes(page.category)){ return true; }}}).sort('date', 'desc' ); %>
 <% var lastDate; %>
