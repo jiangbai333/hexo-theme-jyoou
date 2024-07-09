@@ -1,3 +1,35 @@
-<%- list_categories({ show_count: false, style: 'link'}) %>
-<%- page.category%>
-
+<div id='categories-list'>
+<%- list_categories({show_count: false, style: 'link', class: 'categorys-list',
+    transform(str) {
+        if(str == page.category) {
+            return `<span class='focus-category'>${str}</span>`
+        }
+        return str;
+    }
+}) %>
+<h3>分类为 <%- page.category %> 的文章</h3>
+</div>
+<% var arr = {}, posts=site.posts.filter(v => {let t = v.categories.data; if (t.length > 0){let categories = t.flatMap(v => v.name); if(categories.includes(page.category)){ return true; }}}).sort('date', 'desc' ); %>
+<% var lastDate; %>
+<% posts.forEach(post=> { %>
+<% if (lastDate != date(post.date, 'YYYY' )) { %>
+    <% if (lastDate) { %>
+        </ul>
+        </br>
+    <% } %>
+    <div class='year'>
+        <%= date(post.date, 'YYYY' ) %>
+    </div>
+    <ul class="post-list">
+<% }; lastDate = date(post.date, 'YYYY' ); %>
+        <li>
+        <span class='date'><i>
+        <time>
+        <%= date(post.date, 'MM月DD日' ) %>
+        </time>
+        </i>
+        </span>
+        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+        </li>
+<% }) %>
+</ul>
